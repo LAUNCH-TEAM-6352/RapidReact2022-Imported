@@ -193,13 +193,13 @@ public class RobotContainer
 
         // Run/stop the shooter at the speed for the low target:
         new JoystickButton(gamepad, Button.kBack.value)
-            .whenPressed(new InstantCommand(() -> shooter.toggleVelocity(
+            .onTrue(new InstantCommand(() -> shooter.toggleVelocity(
                 SmartDashboard.getNumber(DashboardConstants.shooterLowTargetVelocityKey, 0)),
                 shooter));
         
         // Run/stop the shooter at the speed for the high target:
         new JoystickButton(gamepad, Button.kStart.value)
-            .whenPressed(new InstantCommand(() -> shooter.toggleVelocity(
+            .onTrue(new InstantCommand(() -> shooter.toggleVelocity(
                 SmartDashboard.getNumber(DashboardConstants.shooterHighTargetVelocityKey, 0)),
                 shooter));
     }
